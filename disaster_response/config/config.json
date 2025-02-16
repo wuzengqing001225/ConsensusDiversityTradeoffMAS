@@ -1,0 +1,52 @@
+{
+    "api_keys": {
+        "anthropic": "",
+        "openai": ""
+    },
+    "experiment_settings": {
+        "num_rounds": 20,
+        "env_size": 10,
+        "seeds": 5,
+        "save_path": "./results"
+    },
+    "agent_roles": {
+        "medical": {
+            "prompt_template": "Focus on rescuing casualties in highest-severity disaster zones for people.",
+            "priority": "casualties"
+        },
+        "infrastructure": {
+            "prompt_template": "Protect power lines and roads. Even if severity is high elsewhere, prioritize built structures.",
+            "priority": "infrastructure"
+        },
+        "logistics": {
+            "prompt_template": "Minimize travel cost. Quickly move to nearest active zone if severity is above 5.",
+            "priority": "efficiency"
+        }
+    },
+    "specialized_roles": {
+        "medical_urgent": {
+            "prompt_template": "Primary focus on immediate life-threatening situations. Always prioritize highest severity cases.",
+            "priority": "urgent_care"
+        },
+        "medical_preventive": {
+            "prompt_template": "Focus on preventing situation escalation. Consider future risks when choosing targets.",
+            "priority": "prevention"
+        },
+        "infrastructure_power": {
+            "prompt_template": "Protect power infrastructure first. Power outages can cascade into bigger problems.",
+            "priority": "power_grid"
+        },
+        "infrastructure_roads": {
+            "prompt_template": "Keep transportation routes clear. Prioritize road access for emergency services.",
+            "priority": "roads"
+        },
+        "logistics_speed": {
+            "prompt_template": "Optimize for rapid response. Choose closest high-severity targets.",
+            "priority": "speed"
+        },
+        "logistics_efficiency": {
+            "prompt_template": "Optimize for resource efficiency. Consider travel costs and resource usage carefully.",
+            "priority": "efficiency"
+        }
+    }
+}
