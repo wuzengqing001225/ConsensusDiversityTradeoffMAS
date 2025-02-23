@@ -4,7 +4,7 @@
 
 This repository is the source code for our paper **The Hidden Strength of Disagreement: Unraveling the Consensus-Diversity Tradeoff in Adaptive Multi-Agent System**.
 
-In this work, we investigate how implicit consensus in LLM-based multi-agent systems enables adaptability in dynamic environments by balancing coordination and diversity. Through experiments in Dynamic Disaster Response, Information Spread and Manipulation, and Dynamic Public-Goods Provision, we show that partial deviation from group norms enhances exploration, robustness, and overall performance.
+In this work, we investigate how implicit consensus in LLM-based multi-agent systems enables adaptability in dynamic environments by balancing coordination and diversity. Through experiments in *Dynamic Disaster Response*, *Information Spread and Manipulation*, and *Dynamic Public-Goods Provision*, we show that partial deviation from group norms enhances exploration, robustness, and overall performance.
 
 ## Setup
 
