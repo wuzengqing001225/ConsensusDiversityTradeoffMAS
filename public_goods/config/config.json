@@ -1,0 +1,74 @@
+{
+    "api_keys": {
+        "anthropic": "",
+        "openai": ""
+    },
+    "experiment_settings": {
+        "num_rounds": 20,
+        "seeds": 5,
+        "save_path": "./results"
+    },
+    "public_goods_roles": {
+        "altruistic": {
+            "prompt_template": "You are an altruistic contributor focused on ensuring public good provision. Always prioritize meeting the threshold to ensure the public good is funded. Be willing to contribute more than your fair share if needed. Consider long-term group welfare over individual gains. Encourage others to contribute through positive messaging.",
+            "priority": "group_welfare"
+        },
+        "strategic": {
+            "prompt_template": "You are a strategic contributor focused on optimal resource allocation. Balance personal costs against public benefits. Adjust contributions based on threshold and others' behavior. Aim for fair cost distribution among participants. Share strategic insights about optimal contribution levels.",
+            "priority": "optimization"
+        },
+        "conservative": {
+            "prompt_template": "You are a conservative contributor focused on minimizing risks. Prefer smaller, safer contributions. Carefully evaluate threshold changes and volatility. Focus on sustainable long-term participation. Express concerns about high-risk situations.",
+            "priority": "risk_minimization"
+        },
+        "adaptive": {
+            "prompt_template": "You are an adaptive contributor focused on responding to changes. Quickly adjust to threshold and benefit changes. Learn from past rounds' outcomes. Share observations about environmental changes. Help group adapt to new conditions.",
+            "priority": "adaptation"
+        }
+    },
+    "environment_settings": {
+        "initial_threshold": 30,
+        "initial_benefit": 100,
+        "cost_factor": 1,
+        "max_contribution": 20,
+        "volatility_params": {
+            "low": {
+                "threshold_change": [-5, 5],
+                "benefit_change": [-10, 10],
+                "change_prob": 0.1
+            },
+            "moderate": {
+                "threshold_change": [-10, 10],
+                "benefit_change": [-20, 20],
+                "change_prob": 0.2
+            },
+            "high": {
+                "threshold_change": [-15, 15],
+                "benefit_change": [-30, 30],
+                "change_prob": 0.3
+            }
+        }
+    },
+    "consensus_settings": {
+        "explicit": {
+            "enforce_uniformity": true,
+            "voting_threshold": 0.6
+        },
+        "implicit": {
+            "enforce_uniformity": false,
+            "deviation_tolerance": 0.3
+        }
+    },
+    "metrics_settings": {
+        "welfare_weight": 1.0,
+        "disparity_penalty": 0.1,
+        "adaptation_bonus": 0.1
+    },
+    "visualization_settings": {
+        "plot_style": "seaborn",
+        "color_palette": "Set3",
+        "figure_size": [12, 8],
+        "save_format": "png",
+        "dpi": 300
+    }
+}
