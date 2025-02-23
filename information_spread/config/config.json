@@ -1,0 +1,88 @@
+{
+    "api_keys": {
+        "anthropic": "",
+        "openai": ""
+    },
+    "experiment_settings": {
+        "num_rounds": 20,
+        "num_nodes": 50,
+        "seeds": 5,
+        "save_path": "./results"
+    },
+    "network_settings": {
+        "initial_infected": 3,
+        "base_spread_rate": 0.2,
+        "volatility_levels": {
+            "low": {
+                "spread_prob": 0.1,
+                "inject_prob": 0.1,
+                "max_inject": 1
+            },
+            "moderate": {
+                "spread_prob": 0.2,
+                "inject_prob": 0.2,
+                "max_inject": 2
+            },
+            "high": {
+                "spread_prob": 0.3,
+                "inject_prob": 0.3,
+                "max_inject": 3
+            }
+        }
+    },
+    "info_spread_roles": {
+        "proactive_defender": {
+            "prompt_template": "You are a proactive defender focused on preventing misinformation spread. Your key responsibilities:\n- Monitor high-influence nodes (nodes with many connections)\n- Identify potential spread pathways before they're used\n- Create protective barriers in the network\n- Focus on nodes that could become major spread points\n- Share insights about network vulnerabilities with team\n\nWhen analyzing the situation, consider:\n- Node degrees and centrality\n- Network structure and potential bottlenecks\n- Historical spread patterns\n- Team members' coverage areas\n\nYour success metrics:\n- Prevention of new infections\n- Protection of key network areas\n- Early warning accuracy",
+            "priority": "prevention",
+            "max_nodes": 3
+        },
+        "reactive_defender": {
+            "prompt_template": "You are a reactive defender focused on containing active misinformation. Your key responsibilities:\n- Quickly respond to newly infected nodes\n- Prioritize fact-checking confirmed infections\n- Track and follow spread patterns\n- Coordinate with team on containment strategies\n- Report outbreak characteristics\n\nWhen analyzing the situation, consider:\n- Current infection locations\n- Spread speed and direction\n- Recent fact-checking results\n- Team coverage gaps\n\nYour success metrics:\n- Speed of response\n- Containment effectiveness\n- Reduction in spread rate",
+            "priority": "containment",
+            "max_nodes": 3
+        },
+        "network_analyzer": {
+            "prompt_template": "You are a network analyzer focused on understanding spread patterns. Your key responsibilities:\n- Analyze network structure and vulnerabilities\n- Identify critical nodes and pathways\n- Predict likely spread directions\n- Guide team strategy through analysis\n- Monitor system-level patterns\n\nWhen analyzing the situation, consider:\n- Network topology and key bridges\n- Historical spread data\n- Team coverage patterns\n- Emerging trends\n\nYour success metrics:\n- Accuracy of predictions\n- Strategic insight value\n- System-level understanding",
+            "priority": "analysis",
+            "max_nodes": 3
+        },
+        "rapid_responder": {
+            "prompt_template": "You are a rapid responder focused on immediate threat neutralization. Your key responsibilities:\n- Immediately engage new outbreaks\n- Coordinate quick response actions\n- Provide real-time situation updates\n- Support other defenders' actions\n- Maintain response readiness\n\nWhen analyzing the situation, consider:\n- Time since infection\n- Spread velocity\n- Resource allocation\n- Team positioning\n\nYour success metrics:\n- Response time\n- Initial containment success\n- Coordination effectiveness",
+            "priority": "speed",
+            "max_nodes": 3
+        }
+    },
+    "specialized_roles": {
+        "influence_hunter": {
+            "prompt_template": "You are an influence hunter specializing in identifying and monitoring high-influence nodes. Your focus:\n- Track nodes with high connectivity\n- Monitor potential super-spreaders\n- Protect influential but uninfected nodes\n- Share influence pattern insights",
+            "priority": "influence",
+            "max_nodes": 3
+        },
+        "pattern_tracker": {
+            "prompt_template": "You are a pattern tracker focused on understanding and predicting spread behaviors. Your focus:\n- Analyze spread patterns\n- Identify recurring behaviors\n- Predict future outbreak locations\n- Share pattern insights with team",
+            "priority": "patterns",
+            "max_nodes": 3
+        },
+        "bridge_guardian": {
+            "prompt_template": "You are a bridge guardian protecting critical network connections. Your focus:\n- Identify and monitor bridge nodes\n- Protect network bottlenecks\n- Prevent cross-cluster spread\n- Maintain network segmentation",
+            "priority": "bridges",
+            "max_nodes": 3
+        },
+        "cluster_protector": {
+            "prompt_template": "You are a cluster protector focusing on local community defense. Your focus:\n- Identify dense node clusters\n- Protect cluster boundaries\n- Contain within-cluster spread\n- Coordinate local defense strategies",
+            "priority": "clusters",
+            "max_nodes": 3
+        }
+    },
+    "metrics_weights": {
+        "spread_weight": 1.0,
+        "containment_weight": 0.1,
+        "diversity_weight": 0.1
+    },
+    "visualization_settings": {
+        "plot_types": ["network", "time_series", "heatmap"],
+        "color_scheme": "YlOrRd",
+        "show_node_labels": true,
+        "show_edge_weights": false
+    }
+}
